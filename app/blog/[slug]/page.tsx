@@ -1,10 +1,16 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+// app/blog/[slug]/page.tsx
+import { useRouter } from 'next/navigation';
 
-const BlogPost = () => {
-  const { query } = useRouter();
-  const { slug } = query;
+interface BlogPostProps {
+  params: {
+    slug: string;
+  };
+}
 
+export default function BlogPost({ params }: BlogPostProps) {
+  const { slug } = params;
+
+  // Example static data for the blog post
   const post = {
     title: 'Example Blog Post',
     content: 'This is the content of the example blog post...',
@@ -16,6 +22,4 @@ const BlogPost = () => {
       <div className="text-lg">{post.content}</div>
     </div>
   );
-};
-
-export default BlogPost;
+}
