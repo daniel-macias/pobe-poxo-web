@@ -1,11 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
-const imageUrl = "/assets/pobepoxo.png"; 
+const imageUrl = "/assets/pobepoxo.png";
 
 export const metadata = {
   title: "Pobe Poxo",
-  description: "The central american game studio.",
+  description: "Central American Game Studio",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:url" content="https://pobepoxo.com" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card Meta Tags */}
