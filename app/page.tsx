@@ -28,7 +28,6 @@ export default function Home() {
             <div className="mt-4 flex space-x-4">
               <Link href="/about" className="text-lg text-gray-700 hover:text-black">About</Link>
               <Link href="/games" className="text-lg text-gray-700 hover:text-black">Games</Link>
-              <Link href="/blog" className="text-lg text-gray-700 hover:text-black">Blog</Link>
               <Link href="/contact" className="text-lg text-gray-700 hover:text-black">Contact</Link>
             </div>
           </div>

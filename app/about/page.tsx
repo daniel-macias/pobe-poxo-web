@@ -2,10 +2,25 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-6 text-center bg-white text-black min-h-screen flex flex-col justify-center items-center">
       <h1 className="text-4xl font-bold mb-4">About Pobe Poxo</h1>
+      <p className="text-lg mb-4">
+        Welcome to Pobe Poxo! We are a passionate team based in Tegucigalpa, Honduras, with diverse experience across various artistic mediums. Our mission is to create immersive and artistic games that captivate players of all ages.
+      </p>
+      <p className="text-lg mb-4">
+        Meet the team:
+      </p>
       <p className="text-lg">
-        Welcome to Pobe Poxo, a game studio dedicated to creating immersive and exciting games for all ages. Our team is passionate about storytelling and game design, and we strive to bring unique experiences to our players.
+        <strong>Gisele Castillo</strong>: Production
+      </p>
+      <p className="text-lg">
+        <strong>Daniel Macías</strong>: Development
+      </p>
+      <p className="text-lg mb-4">
+        <strong>Mario Cárcamo</strong>: Art
+      </p>
+      <p className="text-lg">
+        Together, we are dedicated to bringing unique and unforgettable interactive experiences to life.
       </p>
     </div>
   );
