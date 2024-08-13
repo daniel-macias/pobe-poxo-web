@@ -1,10 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
-const imageUrl = "/assets/pobepoxo.png";
+const imageUrl = "/assets/og_banner.png"; // Updated to the OG banner image
+const faviconUrl = "/icon.png"; // Favicon image
 
 export const metadata = {
-  title: "Pobe Poxo",
+  title: "Pobe Poxo - Central American Game Studio",
   description: "Central American Game Studio",
 };
 
@@ -22,6 +23,10 @@ export default function RootLayout({
         <meta name="keywords" content="Pobe Poxo, game studio, games, indie games, gaming, game development, central america, central american, honduras, costa rica" />
         <meta name="author" content="Pobe Poxo" />
         <title>{metadata.title}</title>
+
+        {/* Favicon */}
+        <link rel="icon" type="image/png" sizes="32x32" href={faviconUrl} />
+        <link rel="icon" type="image/png" sizes="16x16" href={faviconUrl} />
 
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content={metadata.title} />
@@ -45,7 +50,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Pobe Poxo",
               "url": "https://pobepoxo.com/",
-              "logo": imageUrl,
+              "logo": faviconUrl,
               "sameAs": [
                 "https://x.com/pobepoxo",
                 "https://instagram.com/pobepoxo"

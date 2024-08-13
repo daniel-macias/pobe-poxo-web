@@ -11,13 +11,13 @@ export default function Home() {
         <meta name="keywords" content="Pobe Poxo, game studio, games, indie games, gaming, game development, Central America, Honduras, Costa Rica" />
         <meta property="og:title" content="Pobe Poxo - Central American Game Studio" />
         <meta property="og:description" content="Pobe Poxo is a Central American game studio focused on developing immersive and unique gaming experiences. Stay tuned for our upcoming projects." />
-        <meta property="og:image" content="/assets/pobepoxo.png" />
+        <meta property="og:image" content="/assets/og_banner.png" />
         <meta property="og:url" content="https://pobepoxo.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Pobe Poxo - Central American Game Studio" />
         <meta name="twitter:description" content="Pobe Poxo is a Central American game studio focused on developing immersive and unique gaming experiences. Stay tuned for our upcoming projects." />
-        <meta name="twitter:image" content="/assets/pobepoxo.png" />
+        <meta name="twitter:image" content="/assets/og_banner.png" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-white">
         <div className="flex flex-col items-center">
