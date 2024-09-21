@@ -10,7 +10,7 @@ const Contact = () => {
       <div className="bg-gray-100 min-h-screen flex flex-col">
         <Navbar />
         <div className="container mx-auto p-6 text-center bg-white text-black flex flex-col justify-center items-center flex-grow">
-          <h1 className="text-4xl font-bold mb-4">Contact</h1>
+          <h1 className="text-4xl font-bold mb-4 font-playwrite">Contact</h1>
           <p className="text-lg mb-8">Follow us on social media!</p>
           <div className="flex flex-col items-center space-y-4 mb-8">
             <div className="flex flex-col items-center space-y-2">

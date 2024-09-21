@@ -28,6 +28,12 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href={faviconUrl} />
         <link rel="icon" type="image/png" sizes="16x16" href={faviconUrl} />
 
+        {/* Fonts */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap"
+          rel="stylesheet"
+        />
+
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />

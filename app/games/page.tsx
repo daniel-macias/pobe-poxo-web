@@ -8,7 +8,7 @@ const Games = () => {
       <div className="bg-gray-100 min-h-screen flex flex-col">
         <Navbar />
         <div className="container mx-auto p-6 text-center bg-white text-black flex flex-col justify-center items-center flex-grow">
-          <h1 className="text-4xl font-bold mb-4">Animaléctrica</h1>
+          <h1 className="text-4xl font-bold mb-4 font-playwrite">Animaléctrica</h1>
           {/* Main image and description */}
           <div className="w-full max-w-4xl mb-6 flex justify-center">
             <Image

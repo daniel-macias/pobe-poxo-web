@@ -23,8 +23,8 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <Image src="/assets/pobepoxo.png" alt="Pobe Poxo Logo" width={200} height={200} className="mb-8" />
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900">Pobe Poxo</h1>
-            <p className="text-xl font-semibold text-gray-700">Coming Soon!</p>
+            <h1 className="text-3xl font-bold text-gray-900 font-playwrite">Pobe Poxo</h1>
+            <p className="text-xl font-semibold text-gray-700 font-playwrite">Coming Soon!</p>
             <div className="mt-4 flex space-x-4">
               <Link href="/about" className="text-lg text-gray-700 hover:text-black">About</Link>
               <Link href="/games" className="text-lg text-gray-700 hover:text-black">Games</Link>
