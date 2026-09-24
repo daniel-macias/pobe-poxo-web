@@ -6,7 +6,7 @@ const faviconUrl = "/icon.png"; // Favicon image
 
 export const metadata = {
   title: "Pobe Poxo - Central American Game Studio",
-  description: "Central American Game Studio",
+  description: "Central American art and interactive studio",
 };
 
 export default function RootLayout({

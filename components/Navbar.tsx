@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Navbar = () => {
   return (
     <nav className="bg-gray-800 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex items-center justify-between">
         <div className="text-lg font-bold">
           <Link href="/">
             <Image
@@ -15,7 +15,7 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex items-center space-x-4">
           <Link href="/about" className="hover:text-gray-400 font-playwrite">About</Link>
           <Link href="/games" className="hover:text-gray-400 font-playwrite">Games</Link>
           <Link href="/contact" className="hover:text-gray-400 font-playwrite">Contact</Link>
