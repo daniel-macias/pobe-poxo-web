@@ -13,13 +13,13 @@ const About = () => {
           </p>
           <p className="text-lg mb-4">Meet the team:</p>
           <p className="text-lg">
-            <strong>Gisele Castillo</strong>: Production
+            <strong>Gisele Castillo</strong>: Production &amp; Writing
           </p>
           <p className="text-lg">
-            <strong>Maci Reynaud</strong>: Development
+            <strong>Maci Reynaud</strong>: Development &amp; Art
           </p>
           <p className="text-lg mb-4">
-            <strong>Mario Cárcamo</strong>: Art
+            <strong>Mario Cárcamo</strong>: 3D Modeling, Art &amp; Commissions
           </p>
           <p className="text-lg">
             Together, we are dedicated to bringing unique and unforgettable interactive experiences to life.
