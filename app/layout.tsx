@@ -1,28 +1,42 @@
+import { cookies } from "next/headers";
+import LanguageProvider from "@/components/LanguageProvider";
+import spanish from "@/lib/es.json";
 import { Inter } from "next/font/google";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 const imageUrl = "/assets/og_banner.png"; // Updated to the OG banner image
 const faviconUrl = "/icon.png"; // Favicon image
 
-export const metadata = {
-  title: "Pobe Poxo - Central American Game Studio",
-  description: "Central American art and interactive studio",
-};
+function getLanguage() {
+  return cookies().get("pobe-language")?.value === "es" ? "es" : "en";
+}
+
+function getMetadata() {
+  const isSpanish = getLanguage() === "es";
+  return {
+    title: isSpanish ? spanish["Pobe Poxo - Central American Game Studio"] : "Pobe Poxo - Central American Game Studio",
+    description: isSpanish ? spanish["Central American art and interactive studio"] : "Central American art and interactive studio",
+  };
+}
+
+export function generateMetadata() {
+  return getMetadata();
+}
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const language = getLanguage();
+  const metadata = getMetadata();
   return (
-    <html lang="en">
+    <html lang={language}>
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content={metadata.description} />
         <meta name="keywords" content="Pobe Poxo, game studio, games, indie games, gaming, game development, central america, central american, honduras, costa rica" />
         <meta name="author" content="Pobe Poxo" />
-        <title>{metadata.title}</title>
 
         {/* Favicon */}
         <link rel="icon" type="image/png" sizes="32x32" href={faviconUrl} />
@@ -30,7 +44,7 @@ export default function RootLayout({
 
         {/* Fonts */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&display=swap"
           rel="stylesheet"
         />
 
@@ -65,7 +79,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}><LanguageProvider initialLanguage={language}>{children}</LanguageProvider></body>
     </html>
   );
 }

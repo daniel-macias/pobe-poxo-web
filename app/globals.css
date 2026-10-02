@@ -2,28 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #262626;
+  background: #f8f6f2;
+}
+
+::selection {
+  background: #fbcfe8;
+  color: #171717;
+}
+
+a:focus-visible {
+  outline: 2px solid #a32965;
+  outline-offset: 5px;
+}
+
+@layer components {
+  .page-container {
+    @apply mx-auto w-full max-w-5xl px-6 py-14 sm:py-20;
+  }
+  .eyebrow {
+    @apply flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-6 bg-pink-400;
+  }
+  .page-title {
+    @apply mt-4 font-merriweather text-4xl font-bold leading-tight tracking-tight sm:text-5xl sm:leading-tight;
+  }
+  .text-link {
+    @apply inline-flex items-center gap-3 border-b border-neutral-400 pb-1 text-sm font-semibold transition-colors hover:border-pink-400 hover:text-neutral-500;
+  }
 }
 
 @layer utilities {

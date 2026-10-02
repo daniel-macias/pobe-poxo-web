@@ -1,8 +1,11 @@
+"use client";
+
+import { useLanguage } from "@/components/LanguageProvider";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import Navbar from "@/components/Navbar";
+import PageShell from "@/components/PageShell";
 
 const projects = [
   {
@@ -40,16 +43,16 @@ const projects = [
 ];
 
 export default function Games() {
+  const { t } = useLanguage();
   return (
-    <main className="min-h-screen bg-white text-neutral-900">
-      <Navbar />
+    <PageShell>
 
-      <section className="mx-auto w-full max-w-5xl px-6 py-16 sm:py-24">
+      <section className="page-container">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">Selected work</p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight font-playwrite sm:text-5xl">Games & interactive things</h1>
+          <p className="eyebrow">{t("Selected work")}</p>
+          <h1 className="page-title">{t("Games & interactive things")}</h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-neutral-600 sm:text-lg">
-            Pobe Poxo is an art and interactive studio in Central America. We make playful digital experiences, useful experiments, and unusual little worlds.
+            {t("Pobe Poxo is an art and interactive studio in Central America. We make playful digital experiences, useful experiments, and unusual little worlds.")}
           </p>
         </div>
 
@@ -57,21 +60,21 @@ export default function Games() {
           {projects.map((project, index) => (
             <article key={project.title} className="grid gap-8 py-10 md:grid-cols-[minmax(0,1fr)_minmax(320px,1.1fr)] md:items-center md:py-14">
               <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400">{project.type}</p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight font-playwrite">{project.title}</h2>
-                <p className="mt-4 max-w-md leading-7 text-neutral-600">{project.description}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400">{t(project.type)}</p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight font-merriweather">{project.title}</h2>
+                <p className="mt-4 max-w-md leading-7 text-neutral-600">{t(project.description)}</p>
                 <Link href={project.href} className="mt-6 inline-flex border-b border-neutral-900 pb-1 text-sm font-semibold transition hover:text-neutral-500">
-                  View project <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-3 w-3" />
+                  {t("View project")} <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-3 w-3" />
                 </Link>
               </div>
 
-              <Link href={project.href} aria-label={`View ${project.title}`} className={`relative block aspect-[4/3] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 ${index % 2 === 1 ? "md:order-1" : ""}`}>
-                <Image src={project.image} alt={`${project.title} preview`} fill sizes="(min-width: 768px) 46vw, 100vw" className={`${project.imageClassName} transition duration-500 hover:scale-[1.02]`} />
+              <Link href={project.href} aria-label={`${t("View project")}: ${project.title}`} className={`relative block aspect-[4/3] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 ${index % 2 === 1 ? "md:order-1" : ""}`}>
+                <Image src={project.image} alt={`${t("Preview")}: ${project.title}`} fill sizes="(min-width: 768px) 46vw, 100vw" className={`${project.imageClassName} transition duration-500 hover:scale-[1.02]`} />
               </Link>
             </article>
           ))}
         </div>
       </section>
-    </main>
+    </PageShell>
   );
 }

@@ -20,7 +20,7 @@ export default function MoBooKitPage() {
       ]}
       portrait
       links={[
-        { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.macicola.mobookit&hl=en" },
+        { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.macicola.mobookit" },
         { label: "App Store", href: "https://apps.apple.com/us/app/mobookit/id6775362360" },
       ]}
     />

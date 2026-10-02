@@ -1,5 +1,9 @@
+"use client";
+
+import { useLanguage } from "@/components/LanguageProvider";
+import PageShell from "@/components/PageShell";
 // app/blog/[slug]/page.tsx
-import { useRouter } from 'next/navigation';
+
 
 interface BlogPostProps {
   params: {
@@ -8,6 +12,7 @@ interface BlogPostProps {
 }
 
 export default function BlogPost({ params }: BlogPostProps) {
+  const { t } = useLanguage();
   const { slug } = params;
 
   // Example static data for the blog post
@@ -17,9 +22,9 @@ export default function BlogPost({ params }: BlogPostProps) {
   };
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-      <div className="text-lg">{post.content}</div>
-    </div>
+    <PageShell><div className="page-container">
+      <h1 className="page-title mb-6">{t(post.title)}</h1>
+      <div className="text-lg">{t(post.content)}</div>
+    </div></PageShell>
   );
 }

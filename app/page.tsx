@@ -1,38 +1,34 @@
-import Image from "next/image";
+"use client";
+
+import { useLanguage } from "@/components/LanguageProvider";
+import AnimatedLogo from "@/components/AnimatedLogo";
+import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
-import Head from 'next/head';
+import LanguageSwitch from "@/components/LanguageSwitch";
 
 export default function Home() {
+  const { t } = useLanguage();
   return (
     <>
-      <Head>
-        <title>Pobe Poxo - Central American Game Studio</title>
-        <meta name="description" content="Pobe Poxo is a Central American art and interactive studio making games, digital experiences, and playful experiments." />
-        <meta name="keywords" content="Pobe Poxo, game studio, games, indie games, gaming, game development, Central America, Honduras, Costa Rica" />
-        <meta property="og:title" content="Pobe Poxo - Central American Game Studio" />
-        <meta property="og:description" content="Pobe Poxo is a Central American art and interactive studio making games, digital experiences, and playful experiments." />
-        <meta property="og:image" content="/assets/og_banner.png" />
-        <meta property="og:url" content="https://pobepoxo.com" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Pobe Poxo - Central American Game Studio" />
-        <meta name="twitter:description" content="Pobe Poxo is a Central American art and interactive studio making games, digital experiences, and playful experiments." />
-        <meta name="twitter:image" content="/assets/og_banner.png" />
-      </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-white">
+
+      <div className="flex min-h-screen flex-col">
+      <div className="mx-auto flex w-full max-w-5xl justify-end px-6 pt-5"><LanguageSwitch /></div>
+      <main className="flex flex-1 flex-col items-center justify-center px-6 py-14">
         <div className="flex flex-col items-center">
-          <Image src="/assets/pobepoxo.png" alt="Pobe Poxo Logo" width={200} height={200} className="mb-8" />
+          <AnimatedLogo />
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 font-playwrite">Pobe Poxo</h1>
-            <p className="mt-2 max-w-sm text-lg text-gray-600 font-playwrite">Art, games & interactive things.</p>
-            <div className="mx-auto mt-4 grid w-64 grid-cols-3 items-center text-center">
-              <Link href="/about" className="text-lg text-gray-700 hover:text-black">About</Link>
-              <Link href="/games" className="text-lg text-gray-700 hover:text-black">Games</Link>
-              <Link href="/contact" className="text-lg text-gray-700 hover:text-black">Contact</Link>
+            <h1 className="text-3xl font-bold text-gray-900 font-merriweather">Pobe Poxo</h1>
+            <p className="mt-2 max-w-sm text-lg text-gray-600 font-merriweather">{t("Art, games & interactive things.")}</p>
+            <div className="mx-auto mt-6 grid w-64 grid-cols-3 items-center border-t border-neutral-900/10 pt-5 text-center">
+              <Link href="/about" className="text-lg text-gray-700 hover:text-black">{t("About")}</Link>
+              <Link href="/games" className="text-lg text-gray-700 hover:text-black">{t("Games")}</Link>
+              <Link href="/contact" className="text-lg text-gray-700 hover:text-black">{t("Contact")}</Link>
             </div>
           </div>
         </div>
       </main>
+      <SiteFooter />
+      </div>
     </>
   );
 }
