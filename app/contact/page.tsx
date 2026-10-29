@@ -6,6 +6,12 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faXTwitter, faTiktok, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import PageShell from "@/components/PageShell";
 
+const services = [
+  { title: "Game Development", description: "Small games, gameplay systems, and development support." },
+  { title: "Playable Prototypes", description: "Turning ideas into functional, testable experiences." },
+  { title: "Interactive Experiences", description: "Interactive websites, promotional minigames, and creative software." },
+];
+
 const socialLinks = [
   { label: "X", handle: "@pobepoxo", href: "https://x.com/pobepoxo", icon: faXTwitter },
   { label: "TikTok", handle: "@pobepoxo", href: "https://tiktok.com/@pobepoxo", icon: faTiktok },
@@ -35,6 +41,19 @@ export default function Contact() {
             maci@pobepoxo.com
           </a>
         </div>
+
+        <section aria-labelledby="services-heading" className="mt-14 border-t border-neutral-200 pt-8">
+          <h2 id="services-heading" className="font-merriweather text-xl font-semibold">{t("How we can help")}</h2>
+          <p className="mt-3 max-w-2xl leading-7 text-neutral-600">{t("We can help with programming, custom artwork, or both, depending on what your project needs.")}</p>
+          <div className="mt-6 grid gap-6 sm:grid-cols-3">
+            {services.map((service) => (
+              <div key={service.title}>
+                <h3 className="text-sm font-semibold text-neutral-900">{t(service.title)}</h3>
+                <p className="mt-2 text-sm leading-6 text-neutral-600">{t(service.description)}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <div className="mt-14 border-t border-neutral-200 pt-8">
           <h2 className="text-sm font-semibold text-neutral-700">{t("You can also find us here:")}</h2>

@@ -18,6 +18,7 @@ export default function Home() {
           <AnimatedLogo />
           <div className="text-center">
             <h1 className="text-3xl font-bold text-gray-900 font-merriweather">Pobe Poxo</h1>
+            <p className="mt-2 text-sm tracking-wide text-neutral-500" aria-label={`${t("Pronunciation")}: /ˈpo.βe ˈpo.tʃo/`}>/ˈpo.βe ˈpo.tʃo/</p>
             <p className="mt-2 max-w-sm text-lg text-gray-600 font-merriweather">{t("Art, games & interactive things.")}</p>
             <div className="mx-auto mt-6 grid w-64 grid-cols-3 items-center border-t border-neutral-900/10 pt-5 text-center">
               <Link href="/about" className="text-lg text-gray-700 hover:text-black">{t("About")}</Link>

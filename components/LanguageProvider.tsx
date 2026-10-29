@@ -25,7 +25,7 @@ export default function LanguageProvider({ initialLanguage, children }: {
     const translate = (text: string) => language === "es" ? translations[text] ?? text : text;
     document.title = translate("Pobe Poxo - Central American Game Studio");
     for (const selector of ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']) {
-      document.querySelector(selector)?.setAttribute("content", translate("Central American art and interactive studio"));
+      document.querySelector(selector)?.setAttribute("content", translate("Games, playable prototypes, and interactive experiences from Central America. Available for freelance programming and custom artwork."));
     }
     for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) {
       document.querySelector(selector)?.setAttribute("content", document.title);

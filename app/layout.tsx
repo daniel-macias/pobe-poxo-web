@@ -15,7 +15,7 @@ function getMetadata() {
   const isSpanish = getLanguage() === "es";
   return {
     title: isSpanish ? spanish["Pobe Poxo - Central American Game Studio"] : "Pobe Poxo - Central American Game Studio",
-    description: isSpanish ? spanish["Central American art and interactive studio"] : "Central American art and interactive studio",
+    description: isSpanish ? spanish["Games, playable prototypes, and interactive experiences from Central America. Available for freelance programming and custom artwork."] : "Games, playable prototypes, and interactive experiences from Central America. Available for freelance programming and custom artwork.",
   };
 }
 

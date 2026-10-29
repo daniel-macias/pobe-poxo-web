@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { projectContext } from "@/lib/project-context";
 import PageShell from "@/components/PageShell";
 
 type ProjectLink = {
@@ -38,6 +39,7 @@ export default function ProjectDetail({
   links,
 }: ProjectDetailProps) {
   const { t } = useLanguage();
+  const context = projectContext[title];
   return (
     <PageShell>
       <article className="page-container">
@@ -51,9 +53,16 @@ export default function ProjectDetail({
               {t(type)} · {year}
             </p>
             <h1 className="page-title">{title}</h1>
+            {context && <p className="mt-3 text-sm text-neutral-600">{t(context.status)}</p>}
             <div className="mt-6 space-y-4 leading-7 text-neutral-600">
               {description.map((paragraph) => <p key={paragraph}>{t(paragraph)}</p>)}
             </div>
+            {context && (
+              <section className="mt-6 border-l-2 border-pink-300 pl-4">
+                <h2 className="text-sm font-semibold">{t("Our work")}</h2>
+                <p className="mt-1 text-sm leading-6 text-neutral-600">{t(context.work)}</p>
+              </section>
+            )}
             <div className="mt-7 flex flex-wrap gap-3">
               {links.map((link) => (
                 <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-neutral-700">

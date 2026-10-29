@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { projectContext } from "@/lib/project-context";
 import PageShell from "@/components/PageShell";
 
 const projects = [
@@ -62,7 +63,12 @@ export default function Games() {
               <div className={index % 2 === 1 ? "md:order-2" : ""}>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400">{t(project.type)}</p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-tight font-merriweather">{project.title}</h2>
+                <p className="mt-2 text-sm text-neutral-600">{t(projectContext[project.title].status)}</p>
                 <p className="mt-4 max-w-md leading-7 text-neutral-600">{t(project.description)}</p>
+                <div className="mt-5 max-w-md border-l-2 border-pink-300 pl-4">
+                  <h3 className="text-sm font-semibold">{t("Our work")}</h3>
+                  <p className="mt-1 text-sm leading-6 text-neutral-600">{t(projectContext[project.title].work)}</p>
+                </div>
                 <Link href={project.href} className="mt-6 inline-flex border-b border-neutral-900 pb-1 text-sm font-semibold transition hover:text-neutral-500">
                   {t("View project")} <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-3 w-3" />
                 </Link>
